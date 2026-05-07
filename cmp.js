@@ -457,7 +457,8 @@
       })
     };
   };
-
+window.joybringersShowCmpBanner = showBannerFromSettings;
+window.showCmpBanner = showBannerFromSettings;
   init();
 
 })();
