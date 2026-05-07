@@ -214,9 +214,26 @@ function injectStyles() {
  }
 
  function init() {
-   injectStyles();
-   if (!StorageUtil.load()) renderBanner();
- }
+  injectStyles();
+
+  var stored = StorageUtil.load();
+
+  if (stored && stored.categories) {
+    updateGoogleConsent(stored.categories);
+
+    window.dataLayer.push({
+      event: 'cmp_consent_ready',
+      cmp_analytics: stored.categories.analytics ? 'granted' : 'denied',
+      cmp_marketing: stored.categories.marketing ? 'granted' : 'denied',
+      cmp_personalization: stored.categories.personalization ? 'granted' : 'denied',
+      cmp_functionality: stored.categories.functionality ? 'granted' : 'denied'
+    });
+
+    return;
+  }
+
+  renderBanner();
+}
 
  if (document.readyState === 'loading') {
    document.addEventListener('DOMContentLoaded', init);
