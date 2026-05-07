@@ -381,10 +381,14 @@
     }
   }
 
-  window.showCmpBanner = function () {
-    StorageUtil.clear();
-    renderBanner();
-  };
+window.showCmpBanner = function () {
+  try {
+    document.cookie = CONFIG.cookieName + '=; expires=Thu, 01 Jan 01 1970 00:00:00 UTC; path=/;';
+    localStorage.removeItem(CONFIG.cookieName);
+  } catch (e) {}
+
+  renderBanner();
+};
 
   window.clearCmpConsent = function () {
     StorageUtil.clear();
