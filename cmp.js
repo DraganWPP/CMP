@@ -182,7 +182,7 @@ function injectStyles() {
      '<div id="cmp-overlay"></div>' +
      '<div id="cmp-card">' +
        '<div id="cmp-header">' +
-         '<img id="cmp-logo" src="' src="logio.jpeg" '" alt="Joybringers Logo">' +
+         '<img id="cmp-logo" src="' + logoUrl + '" alt="Joybringers Logo">' +
          '<div id="cmp-title">' + CONFIG.bannerTitle + '</div>' +
        '</div>' +
        '<p id="cmp-desc">' + CONFIG.bannerDesc + '</p>' +
