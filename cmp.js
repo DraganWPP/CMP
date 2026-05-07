@@ -223,5 +223,10 @@ function injectStyles() {
  } else {
    init();
  }
+ window.showCmpBanner = function () {
+  document.cookie = CONFIG.cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  try { localStorage.removeItem(CONFIG.cookieName); } catch (e) {}
+  renderBanner();
+};
 
 })();
