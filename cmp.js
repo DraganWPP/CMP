@@ -176,7 +176,7 @@ function injectStyles() {
      '</div>';
    });
 
-   var logoUrl = "https://raw.githubusercontent.com/draganceran/CMP/logo.jpeg"; // REPLACE WITH ACTUAL LOGO PATH
+   var logoUrl = "https://raw.githubusercontent.com/draganceran/CMP/main/logo.jpeg"; // REPLACE WITH ACTUAL LOGO PATH
 
    var html =
      '<div id="cmp-overlay"></div>' +
